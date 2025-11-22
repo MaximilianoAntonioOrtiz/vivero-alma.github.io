@@ -1,6 +1,6 @@
 // ===============================================
 // Archivo: js/components.js
-// Componentes reutilizables (Navbar y Footer)
+// Componentes reutilizables (Navbar y Footer con Icono FA)
 // ===============================================
 
 const getLoggedInUser = () => {
@@ -29,7 +29,7 @@ const createNavbar = () => {
     const navbarHTML = `
         <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="index.html">🌿 Vivero Alma</a>
+                <a class="navbar-brand text-white" href="index.html"><i class="fas fa-seedling me-2"></i> Vivero Alma</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -60,7 +60,7 @@ const createFooter = () => {
     const footerHTML = `
         <footer class="bg-light text-center text-lg-start mt-auto">
             <div class="container p-4">
-                <p class="text-center mb-0">© 2025 Vivero Alma | Proyecto de Desarrollo Web de Maximiliano Ortiz.</p>
+                <p class="text-center mb-0">© 2025 <i class="fas fa-seedling"></i> Vivero Alma | Proyecto Final del Curso de Desarrollo Web.</p>
             </div>
         </footer>
     `;
