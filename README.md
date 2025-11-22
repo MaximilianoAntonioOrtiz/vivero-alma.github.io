@@ -1,120 +1,55 @@
-# 🌿 Vivero Alma – E-commerce  
-Proyecto realizado para el curso de Desarrollo Web (HTML, CSS, JavaScript y Bootstrap)
+# 🌿 Vivero Alma – E-commerce (Proyecto Final)
+
+Proyecto final desarrollado para el curso de Desarrollo Web, implementando una tienda online completa con gestión de usuarios, carrito de compras persistente y funcionalidades avanzadas de filtrado.
 
 ---
 
-## 📌 Descripción del Proyecto  
-**Vivero Alma** es un e-commerce orientado a la venta de plantas, macetas y productos relacionados con jardinería.  
-El objetivo del proyecto es aplicar conocimientos de **HTML**, **CSS**, **Bootstrap**, **JavaScript** y **localStorage**, desarrollando una tienda funcional, responsive y con sistema de usuarios.
+## 🛠 Tecnologías y Herramientas Utilizadas
+
+* **HTML5**
+* **CSS3** (Estilos minimalistas propios)
+* **Bootstrap 5** (Para el diseño responsive y componentes base)
+* **JavaScript (ES6)** (Lógica del negocio, carrito, y validaciones)
+* **localStorage** (Persistencia de datos de usuarios y carrito)
+* **Git / GitHub** (Control de versiones y despliegue del código)
 
 ---
 
-## 🛠 Tecnologías Utilizadas
-- **HTML5**  
-- **CSS3**  
-- **Bootstrap 5**  
-- **JavaScript (ES6)**  
-- **localStorage**  
-- **Diseño Responsive**
+## 🚀 Funcionalidades Principales
+
+El e-commerce está completamente funcional en el lado del cliente (Front-End) y maneja la persistencia de datos mediante `localStorage`.
+
+### 🔐 Sistema de Autenticación (Login / Registro)
+* **Registro:** Permite crear nuevos usuarios (Nombre, Email, Contraseña).
+* **Validaciones:** Incluye chequeo de campos vacíos, formato de email, longitud mínima de contraseña y prevención de emails duplicados.
+* **Login:** Verifica credenciales contra `localStorage`.
+* **Seguridad:** Requiere que el usuario esté **logueado** para **agregar productos al carrito** y **finalizar la compra**.
+* **Gestión de Sesión:** Muestra **"Hola, [Nombre]"** en la barra de navegación y ofrece la opción "Cerrar Sesión".
+
+### 🛒 Carrito de Compras Avanzado
+* **Persistencia:** El carrito se guarda en `localStorage` y se mantiene al recargar la página o al iniciar sesión.
+* **Control de Cantidad (UX):** Los usuarios pueden **incrementar (+) y decrementar (-)** la cantidad de un producto directamente en la vista del carrito.
+* **Cálculo Dinámico:** El precio subtotal y total se actualizan automáticamente con cada cambio de cantidad o eliminación.
+* **Finalizar Compra:** Simula el éxito de la compra y limpia el carrito de `localStorage`.
+
+### 🔍 Catálogo de Productos (20 Items)
+* **Listado Dinámico:** Muestra las 20 plantas y accesorios cargados desde `js/products.js`.
+* **Filtros Multi-Selección (Avanzado):** Permite filtrar los productos por múltiples categorías simultáneamente mediante **checkboxes** en la barra lateral.
+* **Detalle de Producto:** Muestra la información específica de cada producto.
+
+### 📧 Página de Contacto
+* **Validación de Formulario:** Implementación de validaciones en JavaScript para asegurar que todos los campos requeridos estén completos antes de simular el envío.
 
 ---
 
-## 📂 Estructura del Proyecto
+## 📂 Estructura Final del Proyecto
 
-````📁 vivero-alma
-├── 📂 css
-├── 📂 js
-├── 📂 img
-├── 📝 index.html
-├── 🛒 productos.html
-├── 🌱 detalle.html
-├── 🧺 carrito.html
-├── ✉️ contacto.html
-├── 🔐 login.html
-└── 🆕 register.html
+/vivero-alma ├── 📁 css │ └── styles.css # Estilos generales y diseño del banner ├── 📁 img # Contiene las 20 imágenes de los productos y el banner ├── 📁 js │ ├── app.js # Lógica de la página de contacto │ ├── auth.js # Lógica de Login/Register/Logout │ ├── cart.js # Lógica del Carrito (Guardar, Renderizar, +/-) │ └── products.js # Catálogo de 20 productos y lógica de filtrado/renderizado ├── carrito.html ├── contacto.html ├── detalle.html ├── index.html # Página de inicio con banner hero ├── login.html ├── productos.html # Página de listado de productos con filtros ├── register.html └── README.md # Documentación del proyecto
 
-
----
-
-## 🔐 Sistema de Usuarios (Login / Registro)
-
-El proyecto implementa un sistema de autenticación utilizando **localStorage**, que permite:
-
-### ✔ Registro de usuarios
-El usuario puede crear una cuenta proporcionando:
-- Nombre  
-- Email  
-- Contraseña  
-- Confirmación de contraseña  
-
-**Validaciones realizadas:**
-- Todos los campos obligatorios  
-- Formato válido de email  
-- Contraseñas iguales  
-- Contraseña mínimo 6 caracteres  
-- El email no puede estar previamente registrado  
-
-Los usuarios se guardan en `localStorage`.
-
----
-
-### ✔ Inicio de sesión (Login)
-El sistema verifica:
-- Si el email está registrado  
-- Si la contraseña es correcta  
-
-Si la autenticación es exitosa, se guarda en `localStorage` el objeto:
-
-
----
-
-### ✔ Sesión activa
-- Se muestra en la navbar: **"Hola, (nombre)"**  
-- Se oculta el botón de Login  
-- Aparece la opción “Cerrar sesión”  
-
-### ✔ Cerrar sesión
-El usuario puede cerrar sesión limpiando `usuarioLogueado` del almacenamiento local.
-
----
-
-## 🛒 Carrito de Compras
-El carrito funciona mediante localStorage y permite:
-
-- Agregar productos desde Productos o Detalle  
-- Guardar los ítems en localStorage  
-- Mostrar productos agregados  
-- Eliminar productos del carrito  
-- Calcular el total automáticamente  
-- Mantener el carrito incluso tras recargar la página  
-
----
-
-## 📱 Diseño Responsive
-El sitio es completamente responsive utilizando:
-- Grillas de Bootstrap  
-- Navbar responsive  
-- Cards adaptables  
-- Imágenes escalables  
-
----
-
-## 🧪 Funcionalidades Principales
-- Listado de productos dinámico  
-- Vista de detalle de producto  
-- Carrito persistente  
-- Registro y login con validaciones  
-- Gestión completa de sesión  
-- Página de contacto funcional (sin backend)  
 
 ---
 
 ## 👤 Autor
-**Maximiliano Ortiz**  
-Proyecto final del curso de Desarrollo Web.
 
----
-
-## 📄 Licencia
-Este proyecto es de uso educativo. Las imágenes utilizadas provienen de bancos de imágenes libres (Unsplash, Pexels).
-
+**Maximiliano Ortiz**
+Proyecto Final del Curso de Desarrollo Web.
