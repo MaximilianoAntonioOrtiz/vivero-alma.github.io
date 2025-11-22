@@ -1,65 +1,79 @@
 /* ===============================================
    Archivo: css/styles.css
-   Estilos finales y pulido (Minimalista y Claro)
+   Estilos finales: Opción A - Verde Oliva Sofisticado
    =============================================== */
+
+/* PALETA DE COLORES
+   - Navbar: #385E40 (Oliva Profundo)
+   - Botones Principales: #5D7C56 (Musgo)
+   - Botones Secundarios: #A2B79A (Verde Pálido)
+   - Fondo: #FAFAF5 (Gris Cálido)
+   - Texto/Acento: #607C3C 
+*/
 
 /* 1. RESET Y BASE */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa; /* Color de fondo claro */
+    background-color: #FAFAF5; /* FONDO: Gris Cálido (#FAFAF5) */
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Asegura que el footer se quede abajo */
+    min-height: 100vh;
 }
 
 main {
-    flex-grow: 1; /* Esto empuja el footer hacia abajo */
+    flex-grow: 1;
 }
 
-/* 2. ESTILOS DE COMPONENTES */
+/* 2. ESTILOS DE COMPONENTES Y NAVBAR */
 
-/* Navbar (verde principal) */
+/* Navbar (Verde Oliva Profundo) */
 .bg-success {
-    background-color: #38761d !important; /* Verde oscuro primario */
+    background-color: #385E40 !important; /* NAVBAR: Oliva Profundo */
 }
 .navbar-brand {
     font-weight: bold;
     font-size: 1.5rem;
 }
 
-/* Botones de acción (Heredar el color verde principal) */
+/* Texto de Precios y Títulos de Productos */
+.text-success, 
+.card-title {
+    color: #607C3C !important; /* ACENTO: Verde Oliva (#607C3C) */
+}
+
+/* Botones Principales (Agregar al Carrito, Finalizar Compra) */
 .btn-success {
-    background-color: #38761d;
-    border-color: #38761d;
+    background-color: #5D7C56; /* BOTÓN PRINCIPAL: Verde Musgo */
+    border-color: #5D7C56;
 }
 .btn-success:hover {
-    background-color: #5d9237;
-    border-color: #5d9237;
+    background-color: #708A69;
+    border-color: #708A69;
 }
 
-/* Botones secundarios (Login/Registro) */
+/* Botones Secundarios (Registrarme) */
 .btn-primary {
-    background-color: #6aa84f;
-    border-color: #6aa84f;
+    background-color: #A2B79A; /* BOTÓN SECUNDARIO: Verde Pálido */
+    border-color: #A2B79A;
 }
 .btn-primary:hover {
-    background-color: #79ac62;
-    border-color: #79ac62;
+    background-color: #B2C7AA;
+    border-color: #B2C7AA;
 }
 
-/* Botón Outline */
+/* Botón Outline (Login) */
 .btn-outline-light {
     color: #fff;
     border-color: #fff;
 }
 .btn-outline-light:hover {
-    color: #38761d;
+    color: #385E40; /* Texto oscuro al pasar el mouse */
     background-color: #fff;
 }
 
+
 /* 3. ESTILOS DE PRODUCTOS */
 
-/* Ajuste para las Cards (sombra y esquinas suaves) */
 .card {
     transition: transform 0.2s, box-shadow 0.2s;
     border-radius: 8px;
@@ -67,7 +81,7 @@ main {
 }
 .card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra sutil al pasar el mouse */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .card-img-top {
     border-bottom: 1px solid #eee;
@@ -75,37 +89,29 @@ main {
 
 /* Títulos en Detalle */
 .display-4, .display-5 {
-    color: #38761d; /* Verde para títulos importantes */
+    color: #607C3C; /* Acento para títulos importantes */
 }
 
-/* 4. ESTILOS DE CARRO */
-.list-group-item img {
-    border-radius: 4px;
-    border: 1px solid #eee;
-}
 
-/* 5. FOOTER */
-footer {
-    border-top: 1px solid #e9ecef; /* Línea sutil sobre el footer */
-}
-
-/* 6. ESTILOS DEL BANNER HERO (NUEVO) */
+/* 4. ESTILOS DEL BANNER HERO */
 .hero-banner {
-    /* Ruta a la imagen que acabas de guardar */
     background-image: url('../img/vivero_banner.jpg');
     background-size: cover;
     background-position: center;
-    height: 60vh; /* Altura del 60% del viewport */
+    height: 60vh;
     min-height: 400px;
-    color: white; /* Para que el texto sea visible */
-    /* Asegura que el contenido esté centrado */
+    color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .hero-banner .bg-opacity-50 {
-    /* Fondo semi-transparente para hacer legible el texto sobre la imagen */
     background-color: rgba(0, 0, 0, 0.4) !important; 
     padding: 30px;
     border-radius: 10px !important;
+}
+
+/* 5. FOOTER */
+footer {
+    border-top: 1px solid #e9ecef;
 }
