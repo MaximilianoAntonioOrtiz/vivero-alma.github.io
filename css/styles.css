@@ -39,7 +39,6 @@ main {
 
 /* Botones secundarios (Login/Registro) */
 .btn-primary {
-    /* Verde claro para el Registro/Login */
     background-color: #6aa84f;
     border-color: #6aa84f;
 }
@@ -57,7 +56,6 @@ main {
     color: #38761d;
     background-color: #fff;
 }
-
 
 /* 3. ESTILOS DE PRODUCTOS */
 
@@ -89,4 +87,25 @@ main {
 /* 5. FOOTER */
 footer {
     border-top: 1px solid #e9ecef; /* Línea sutil sobre el footer */
+}
+
+/* 6. ESTILOS DEL BANNER HERO (NUEVO) */
+.hero-banner {
+    /* Ruta a la imagen que acabas de guardar */
+    background-image: url('../img/vivero_banner.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh; /* Altura del 60% del viewport */
+    min-height: 400px;
+    color: white; /* Para que el texto sea visible */
+    /* Asegura que el contenido esté centrado */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-banner .bg-opacity-50 {
+    /* Fondo semi-transparente para hacer legible el texto sobre la imagen */
+    background-color: rgba(0, 0, 0, 0.4) !important; 
+    padding: 30px;
+    border-radius: 10px !important;
 }
