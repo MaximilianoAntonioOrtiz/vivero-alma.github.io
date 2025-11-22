@@ -1,15 +1,33 @@
 // ===============================================
 // Archivo: js/products.js
-// Catálogo de Productos y Lógica de Carga (Etapa 5)
+// Catálogo de Productos y Lógica de Carga (20 Ítems)
 // ===============================================
 
 // La variable 'products' es 'var' para ser accesible globalmente por cart.js
 var products = [
-    { id: 1, name: "Monstera Deliciosa", category: "Plantas de Interior", price: 25.50, description: "Una planta tropical muy popular, conocida por sus grandes hojas perforadas. Necesita luz indirecta y riego moderado.", image: "monstera.jpg" },
-    { id: 2, name: "Cactus San Pedro", category: "Cactus y Suculentas", price: 15.00, description: "Fácil de cuidar, requiere poca agua y mucha luz solar. Ideal para principiantes.", image: "cactus.jpg" },
-    { id: 3, name: "Set de 3 Macetas de Cerámica", category: "Macetas", price: 35.99, description: "Macetas de cerámica esmaltada, perfectas para plantas de tamaño medio. Incluye platos de drenaje.", image: "macetas.jpg" },
-    { id: 4, name: "Tierra de Diatomeas Orgánica", category: "Herramientas", price: 9.99, description: "Fertilizante y pesticida natural. 100% orgánico y seguro para mascotas y niños.", image: "diatomeas.jpg" },
-    { id: 5, name: "Ficus Lyrata (Fiddle Leaf Fig)", category: "Plantas de Interior", price: 45.00, description: "Planta de interior elegante con grandes hojas en forma de violín. Prefiere ambientes estables.", image: "ficus.jpg" }
+    // --- PRODUCTOS INICIALES ---
+    { id: 1, name: "Monstera Deliciosa", category: "Plantas de Interior", price: 25.50, description: "Una planta tropical muy popular, conocida por sus grandes hojas perforadas.", image: "monstera.jpg" },
+    { id: 2, name: "Cactus San Pedro", category: "Cactus y Suculentas", price: 15.00, description: "Fácil de cuidar, requiere poca agua y mucha luz solar.", image: "cactus.jpg" },
+    { id: 3, name: "Set de 3 Macetas de Cerámica", category: "Macetas", price: 35.99, description: "Macetas de cerámica esmaltada, perfectas para plantas de tamaño medio.", image: "macetas.jpg" },
+    { id: 4, name: "Tierra de Diatomeas Orgánica", category: "Herramientas", price: 9.99, description: "Fertilizante y pesticida natural. 100% orgánico y seguro para mascotas.", image: "diatomeas.jpg" },
+    { id: 5, name: "Ficus Lyrata (Fiddle Leaf Fig)", category: "Plantas de Interior", price: 45.00, description: "Planta de interior elegante con grandes hojas en forma de violín.", image: "ficus.jpg" },
+    
+    // --- 15 PRODUCTOS ADICIONALES ---
+    { id: 6, name: "Suculenta Echeveria", category: "Cactus y Suculentas", price: 8.50, description: "Variedad popular de suculenta de bajo mantenimiento.", image: "echeveria.jpg" },
+    { id: 7, name: "Palmera de Salón", category: "Plantas de Interior", price: 32.90, description: "Ideal para esquinas oscuras. Purifica el aire.", image: "palmera.jpg" },
+    { id: 8, name: "Rosas Miniatura", category: "Plantas de Exterior", price: 19.99, description: "Variedad de rosal compacto ideal para balcones.", image: "rosas.jpg" },
+    { id: 9, name: "Orquídea Phalaenopsis", category: "Plantas de Interior", price: 55.00, description: "Elegante orquídea de floración prolongada. Requiere cuidados especiales.", image: "orquidea.jpg" },
+    { id: 10, name: "Bonsái Ficus Retusa", category: "Bonsái", price: 79.00, description: "Bonsái de fácil manejo, perfecto para principiantes.", image: "bonsai.jpg" },
+    { id: 11, name: "Kit de Herramientas de Jardinería", category: "Herramientas", price: 29.99, description: "Incluye pala, rastrillo y trasplantador de acero inoxidable.", image: "kit_herramientas.jpg" },
+    { id: 12, name: "Maceta Colgante de Yute", category: "Macetas", price: 12.50, description: "Maceta de estilo rústico para colgar plantas de hoja caduca.", image: "maceta_yute.jpg" },
+    { id: 13, name: "Lavanda (Lavandula)", category: "Plantas de Exterior", price: 14.00, description: "Planta aromática que atrae a los polinizadores y repele insectos.", image: "lavanda.jpg" },
+    { id: 14, name: "Alocasia Polly", category: "Plantas de Interior", price: 28.99, description: "Conocida como 'Oreja de elefante'. Hojas oscuras y brillantes.", image: "alocasia.jpg" },
+    { id: 15, name: "Calathea Orbifolia", category: "Plantas de Interior", price: 38.00, description: "Hojas grandes y redondas. Necesita alta humedad.", image: "calathea.jpg" },
+    { id: 16, name: "Fertilizante Líquido Universal", category: "Herramientas", price: 11.50, description: "Ideal para uso semanal en todo tipo de plantas de interior y exterior.", image: "fertilizante.jpg" },
+    { id: 17, name: "Tiestos de Barro (Pack 4)", category: "Macetas", price: 22.00, description: "Tiestos tradicionales de barro cocido con excelente drenaje.", image: "tiestos.jpg" },
+    { id: 18, name: "Suculenta Collar de Perlas", category: "Cactus y Suculentas", price: 16.50, description: "Planta colgante perfecta para estanterías altas.", image: "collar_perlas.jpg" },
+    { id: 19, name: "Helecho Boston", category: "Plantas de Interior", price: 21.00, description: "Clásico helecho que prospera en ambientes húmedos y con poca luz.", image: "helecho.jpg" },
+    { id: 20, name: "Tulipanes (Bulbos Pack 10)", category: "Bulbos", price: 18.00, description: "Bulbos de tulipán listos para plantar en otoño.", image: "tulipanes.jpg" }
 ];
 
 // Función para conectar los listeners del carrito (definida en cart.js)
@@ -19,6 +37,9 @@ const initCartListeners = () => {
     }
 };
 
+/**
+ * Función para generar las cards de productos y mostrarlas en productos.html
+ */
 const renderProducts = () => {
     const productListContainer = document.getElementById('product-list');
     if (!productListContainer) return;
@@ -45,6 +66,9 @@ const renderProducts = () => {
     productListContainer.innerHTML = htmlContent;
 };
 
+/**
+ * Función que busca el ID del producto en la URL y renderiza el detalle.
+ */
 const renderProductDetail = () => {
     const detailContainer = document.getElementById('product-detail');
     if (!detailContainer) return;
@@ -79,6 +103,8 @@ const renderProductDetail = () => {
     detailContainer.innerHTML = detailHTML;
 };
 
+
+// Bloque de ejecución principal (llamar funciones de renderizado y conexión)
 document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('product-list')) {
         renderProducts();
