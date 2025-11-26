@@ -115,3 +115,59 @@ main {
 footer {
     border-top: 1px solid #e9ecef;
 }
+
+/* =============================================== */
+/* ESTILOS HERO SLIDER */
+/* =============================================== */
+
+.slider-container {
+    /* La altura que tendrá el hero section */
+    height: 60vh; 
+    overflow: hidden; /* Esconde las imágenes que no se están mostrando */
+    position: relative;
+}
+
+#slides-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* Oculta todas las imágenes por defecto */
+    transition: opacity 1.5s ease-in-out; /* Define el efecto de fade */
+    object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
+    object-position: center;
+}
+
+.slide.active {
+    opacity: 1; /* Muestra solo la imagen que tiene la clase 'active' */
+}
+
+.slider-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45); /* Fondo semitransparente para que el texto resalte */
+    z-index: 10;
+    /* Centrado absoluto */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Estilo para que el texto sea más legible */
+.slider-overlay h1, .slider-overlay p {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}

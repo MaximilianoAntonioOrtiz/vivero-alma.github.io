@@ -1,36 +1,34 @@
 // ===============================================
-// Archivo: js/app.js
-// Lógica y Validaciones Generales (Ej: Contacto)
+// Archivo: js/app.js (FINAL CON SLIDER)
 // ===============================================
 
 /**
- * Función que maneja el envío y la validación del formulario de contacto.
+ * Lógica para el Hero Slider automático en index.html
  */
-const handleContactForm = (e) => {
-    e.preventDefault();
-    
-    // Obtener elementos del formulario
-    const form = document.getElementById('contact-form');
-    
-    // Simple validación de Bootstrap (chequea el 'required' del HTML)
-    // NOTA: Para proyectos más avanzados, usarías JS para validación campo por campo.
-    if (!form.checkValidity()) {
-        // Si el formulario no es válido (campos requeridos vacíos), muestra un mensaje
-        alert('Por favor, completa todos los campos requeridos correctamente.');
-        return;
-    }
+const startSlider = () => {
+    const slides = document.querySelectorAll('.slide');
+    if (slides.length === 0) return;
 
-    // Si todo es válido:
-    alert('¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.');
-    form.reset(); // Limpia el formulario
-    
-    // NOTA: Aquí terminaría el proceso, ya que no estamos usando un backend.
+    let currentSlide = 0;
+
+    const changeSlide = () => {
+        // 1. Eliminar la clase 'active' de la diapositiva actual
+        slides[currentSlide].classList.remove('active');
+
+        // 2. Calcular el índice de la siguiente diapositiva (loop)
+        currentSlide = (currentSlide + 1) % slides.length;
+
+        // 3. Añadir la clase 'active' a la nueva diapositiva
+        slides[currentSlide].classList.add('active');
+    };
+
+    // Iniciar el temporizador para cambiar la diapositiva cada 5000 milisegundos (5 segundos)
+    setInterval(changeSlide, 5000);
 };
 
-// Conectar el listener al formulario de Contacto
 document.addEventListener('DOMContentLoaded', () => {
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', handleContactForm);
+    // Solo inicia el slider si estamos en la página de inicio y la estructura existe
+    if (document.getElementById('hero-slider')) {
+        startSlider();
     }
 });
